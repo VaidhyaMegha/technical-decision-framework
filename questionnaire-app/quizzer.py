@@ -72,7 +72,7 @@ class Feedback():
 
     def check_win(self, value):
         # print(value)
-        if value == self.blah.country_capital[self.blah.target_country]:
+        if value == self.blah.question_capital[self.blah.target_question]:
             # print('yes?')
             self.show_win()
         else:
@@ -87,8 +87,8 @@ class Feedback():
 
         self.label.destroy()
         self.label = ttk.Label(
-            self.master, text='Well done!\n The capital of {} is {}!\n Do you want to continue?'.format(self.blah.target_country,
-                                                                                                        self.blah.country_capital[self.blah.target_country]))
+            self.master, text='Well done!\n The capital of {} is {}!\n Do you want to continue?'.format(self.blah.target_question,
+                                                                                                        self.blah.question_capital[self.blah.target_question]))
         self.label.config(justify=CENTER)
         self.label.config(font=('Calibri', 18, 'bold'))
 
@@ -113,8 +113,8 @@ class Feedback():
 
         self.label.destroy()
         self.label = ttk.Label(
-            self.master, text='That is incorrect.\nThe capital of {} is {}!\n Do you want to continue?'.format(self.blah.target_country,
-                                                                                                               self.blah.country_capital[self.blah.target_country]))
+            self.master, text='That is incorrect.\nThe capital of {} is {}!\n Do you want to continue?'.format(self.blah.target_question,
+                                                                                                               self.blah.question_capital[self.blah.target_question]))
         self.label.config(justify=CENTER)
         self.label.config(font=('Calibri', 18, 'bold'))
 

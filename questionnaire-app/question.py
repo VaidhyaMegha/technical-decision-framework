@@ -6,10 +6,10 @@ from tkinter import ttk
 class Quizzer(object):
 
     def __init__(self):
-        self.country_list = []
-        self.capital_list = []
-        self.country_capital = {}
-        self.target_country = ''
+        self.question_list = []
+        self.answer_list = []
+        self.question_capital = {}
+        self.target_question = ''
 
 
         # set up the country and capital dict
@@ -20,12 +20,12 @@ class Quizzer(object):
         # question_list = []
 
         # connect to the database
-        country_db="./country_database.db"
-        connection=sqlite3.connect(country_db)
+        questions_db="./questions.db"
+        connection=sqlite3.connect(questions_db)
         cursor=connection.cursor()
 
         # query the database and return all matching values
-        cursor.execute('select country_name from country where has_capital=1')
+        cursor.execute('select question from questions where has_answer=1')
         rows=cursor.fetchall()
 
 
@@ -33,23 +33,23 @@ class Quizzer(object):
         for x in rows:
             x = str(x)
             x = x[2:-3]
-            self.country_list.append(x)
+            self.question_list.append(x)
 
         # query the database and return all matching values
-        cursor.execute('select capital_city from country where has_capital=1')
+        cursor.execute('select answers from questions where has_answer=1')
         for x in cursor:
             x = str(x)
             x = x[2:-3]
             # print(x)
-            self.capital_list.append(x)
+            self.answer_list.append(x)
 
         # create the dict
-        for x in range(len(self.country_list)):
-            self.country_capital[self.country_list[x]] = self.capital_list[x]
+        for x in range(len(self.question_list)):
+            self.question_capital[self.question_list[x]] = self.answer_list[x]
 
     def get_question_list(self):
         question_list = []
-        country_capital = self.country_capital
+        country_capital = self.question_capital
         self.target_country = random.choice(list(country_capital.keys()))
 
         question_list.append(country_capital[self.target_country])
@@ -65,7 +65,7 @@ class Quizzer(object):
 
         random.shuffle(question_list)
 
-        question_string = 'What is the capital of {}?'.format(self.target_country)
+        question_string = '{}'.format(self.target_country)
 
         return question_string, question_list
 
