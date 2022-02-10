@@ -1,0 +1,17 @@
+ID,QuestionID,AnswerText,Correct
+0,0,Structured Query Language,1
+1,0,Structured Query List,0
+2,0,Simple Query Language,0
+3,0,Structured Question Language,0
+4,1,FLOAT,0
+5,1,NUMERIC,0
+6,1,DECIMAL,1
+7,1,CHARACTER,0
+9,2,TRUNCATE,0
+10,2,ALTER,0
+11,2,UPDATE,0
+12,2,CREATE,1
+13,3,DELETE,0
+14,3,DROP,0
+15,3,REMOVE,0
+16,3,TRUNCATE,1
