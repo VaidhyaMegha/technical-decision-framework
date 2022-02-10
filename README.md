@@ -12,7 +12,7 @@ A framework of technical questions on client's requirements to arrive at optimal
 
 # Design
 
-Framework's core data structure is a "knowledge graph". It is further described [here](https://github.com/VaidhyaMegha/vaidhyamegha-knowledge-graphs)
+Framework's core data structure is a "knowledge graph". It is further described [here](https://github.com/VaidhyaMegha/vaidhyamegha-knowledge-graphs/blob/main/docs/open_knowledge_graph_on_technical_decisions/out.pdf)
 
 # References
 
